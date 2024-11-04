@@ -1,0 +1,219 @@
+body {
+    font-family: 'Roboto', sans-serif;  /* Fuente principal para el cuerpo */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* Color de fondo suave */
+}
+
+header {
+    background: #4d204e;
+    background: linear-gradient(112deg,#4d204e 25%, #d28dd2 80%);
+    background: -webkit-linear-gradient(112deg,#4d204e 25%, #d28dd2 80%);
+    background: -moz-linear-gradient(112deg,#4d204e 25%, #d28dd2 80%);
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-family: 'Playfair Display', serif; /* Fuente para el header */
+    h2{
+        font-family: 'Playfair Display', serif; /* Fuente para subtítulos */
+        text-align: center;
+        margin-top: 20px;
+        color: #dad2d2; /* Color del texto del subtítulo */
+    }
+}
+h1 {
+    font-size: 2.5em; /* Tamaño de fuente grande para el título */
+}
+
+nav ul {
+    list-style: none; /* Sin viñetas */
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; /* Elementos en línea */
+    margin-right: 15px; /* Espacio entre enlaces */
+}
+
+nav ul li a {
+    color: white; /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado */
+    font-family: 'Arial', sans-serif; /* Asegúrate de que esta fuente se aplique a los enlaces */
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif; /* Fuente para subtítulos */
+    text-align: center;
+    margin-top: 20px;
+    color: #6c4f4f; /* Color del texto del subtítulo */
+}
+
+main {
+    padding: 20px; /* Espaciado interno del contenido principal */
+}
+
+th, td {
+    padding: 10px; /* Espaciado interno de celdas */
+    border: 1px solid #ddd; /* Bordes de celdas */
+    text-align: left; /* Alinear texto a la izquierda */
+}
+
+th {
+    background-color: #f2f2f2; /* Fondo para el encabezado de la tabla */
+}
+
+table {
+    width: 100%; /* Tabla ocupa todo el ancho */
+    border-collapse: collapse; /* Colapsar bordes */
+}
+
+#total-container {
+    text-align: right; /* Alinear total a la derecha */
+    margin-top: 20px; /* Espacio superior */
+}
+
+button {
+    background-color: #6c4f4f; /* Color del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+    width: 100%; /* Botón ocupa todo el ancho */
+    margin-top: 10px; /* Espacio superior */
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Espacio entre los botones */
+    align-items: center; /* Centrar verticalmente los botones */
+    margin-top: 20px; /* Margen superior para separar de la tabla */
+}
+
+.button-container button {
+    padding: 5px 10px; /* Espaciado interno más pequeño para los botones */
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+    margin-right: 20px; /* Margen a la derecha para separar los botones */
+}
+/* Asegurarse de que el último botón no tenga margen adicional */
+.button-container button:last-child {
+    margin-right: 0; /* Elimina el margen del último botón */
+}
+
+button:hover {
+    background-color: #5a3e3e; /* Color al pasar el mouse */
+}
+
+
+#productos{
+    display: grid; /* Usar CSS Grid para la disposición */
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual ancho */
+    gap: 20px; /* Espacio entre los productos */
+    padding: 20px; /* Espacio interno en el contenedor */
+}
+.producto {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 15px;
+    padding: 15px;
+    text-align: center;
+    display: flex; /* Usar flexbox para el contenedor del producto */
+    flex-direction: column; /* Colocar los elementos en columna */
+    align-items: center; /* Centrar los elementos horizontalmente */
+    border: 1px solid #ccc; /* Agregar borde opcional */
+    border-radius: 5px; /* Esquinas redondeadas opcionales */
+    padding: 10px; /* Espaciado interno del producto */
+    background-color: #f9f9f9; /* Color de fondo opcional */
+}
+
+.producto img {
+    width: 100%; /* Hacer que la imagen ocupe el ancho completo del contenedor */
+    height: auto; /* Mantener la proporción de la imagen */
+    max-height: 250px; /* Establecer una altura máxima para las imágenes */
+    object-fit: contain; /* Ajustar la imagen sin distorsión */
+}
+
+.producto h3 {
+    font-family: 'Playfair Display', serif; /* Fuente para el nombre del producto */
+    color: #6c4f4f; /* Color para el nombre del vino */
+}
+
+/*Seccion de contacto*/
+
+label {
+    display: block; /* Hacer que las etiquetas ocupen toda la línea */
+    margin: 10px 20px 5px; /* Margen superior de 10px, márgenes laterales de 20px, margen inferior de 5px */
+    color: #333; /* Color del texto del label */
+}
+
+input, textarea {
+    width: calc(100% - 40px); /* Ajustar el ancho para tener en cuenta los márgenes laterales */
+    padding: 10px; /* Espaciado interno */
+    margin: 0 20px 15px; /* Espacio entre campos con márgenes laterales de 20px */
+    border: 1px solid #ccc; /* Borde suave */
+    border-radius: 4px; /* Bordes redondeados */
+}
+.form-container {
+    background-color: #ffffff; /* Fondo blanco para los formularios */
+    border: 1px solid #ddd; /* Borde suave */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    margin: 20px 0; /* Margen vertical */
+    margin-right: 10px; /* Margen derecho ajustado */
+    width: 400px; /* Ancho fijo para el contenedor */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    float: left; /* Alinear a la izquierda */
+}
+
+#contacto {
+    overflow: hidden; /* Asegura que los elementos flotantes se comporten correctamente */
+    padding-right: 20px; /* Espacio adicional a la derecha del contenedor principal */
+}
+
+h2 {
+    color: #6c4f4f; /* Color para los títulos de los formularios */
+    text-align: center; /* Centrar texto */
+}
+
+button {
+    background-color: #6c4f4f; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar por encima */
+    width: 100%; /* Botón ocupa todo el ancho */
+}
+
+button:hover {
+    background-color: #5a3e3e; /* Color al pasar el mouse */
+}
+
+input::placeholder {
+    color: #aaa; /* Color del texto del placeholder */
+    font-style: italic; /* Estilo del texto del placeholder */
+}
+/*Fin seccion contacto*/
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #4d204e;
+    background: linear-gradient(112deg,#4d204e 25%, #d28dd2 80%);
+    background: -webkit-linear-gradient(112deg,#4d204e 25%, #d28dd2 80%);
+    background: -moz-linear-gradient(112deg,#4d204e 25%, #d28dd2 80%);
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.link-readme {
+    margin-top: 10px;  /* Espacio superior para separar del texto anterior */
+    font-size: 0.8em;   /* Tamaño de fuente más pequeño */
+}
+
+.link-readme a {
+    text-align: initial;
+    color: rgb(22, 10, 24);          /* Color gris para el enlace */
+}

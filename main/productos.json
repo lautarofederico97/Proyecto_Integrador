@@ -1,0 +1,20 @@
+[
+    {
+        "nombre": "Vino Tinto",
+        "descripcion": "Descripción del vino tinto.",
+        "precio": 20,
+        "imagen": "vino1.jpg"
+    },
+    {
+        "nombre": "Vino Blanco",
+        "descripcion": "Descripción del vino blanco.",
+        "precio": 25,
+        "imagen": "vino2.jpg"
+    },
+    {
+        "nombre": "Vino Rosado",
+        "descripcion": "Descripción del vino rosado.",
+        "precio": 22,
+        "imagen": "vino3.jpg"
+    }
+]

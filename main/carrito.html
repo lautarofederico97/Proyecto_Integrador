@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Enlaza tu CSS -->
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="/Proyecto_Integrador/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Carrito de Compras</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+                <li><a href="index.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Productos en tu Carrito</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="carrito-items">
+                <!-- Aquí se agregarán los productos del carrito -->
+            </tbody>
+        </table>
+        <div id="total-container">
+            <strong>Total: </strong><span id="total">0</span>$
+        </div>
+        <div class="button-container">
+            <button id="limpiar-carrito" onclick="limpiarCarrito()">Limpiar Carrito</button>
+            <button id="finalizar-compra">Finalizar Compra</button>
+        </div>
+    </main>
+    
+
+    <footer>
+        <p>&copy; 2024 Tu Tienda de Vinos</p>
+    </footer>
+
+    <script src="carrito.js"></script> <!-- Enlaza tu archivo JavaScript -->
+</body>
+</html>
