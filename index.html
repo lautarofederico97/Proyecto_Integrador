@@ -9,172 +9,215 @@
     <link rel="stylesheet" href="/Proyecto_Integrador/main/README.md">
     <link rel="stylesheet" href="/Proyecto_Integrador/main/carrito.html">
     <link rel="stylesheet" href="/Proyecto_Integrador/main/carrito.js">
-    
+    <link rel="stylesheet" href="/Proyecto_Integrador/css/bootstrap.css">
+    <link rel="stylesheet" href="/Proyecto_Integrador/js/bootstrap.bundle.min.js">
 </head>
 <body>
     <header>
-        <h1>WINE NOT</h1>
-        
-        <nav>
-            <ul>
-                <li><a href="/Proyecto_Integrador/index.html">Inicio</a></li>
-                <li><a href="/Proyecto_Integrador/main/carrito.html">Carrito</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col text-center">
+                    <h1 class="display-4">WINE NOT</h1>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="/Proyecto_Integrador/index.html">WINE-NOT</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/Proyecto_Integrador/index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Proyecto_Integrador/main/carrito.html">Carrito</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
     </header>
+    
+    
+
+        <!-- Carrusel de imágenes -->
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./Imagenes Vinos/imagenes carrousel/pexels-jill-wellington-1638660-39351.jpg" class="d-block w-100" alt="#">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imagenes Vinos/imagenes carrousel/pexels-elletakesphotos-2954929.jpg" class="d-block w-100" alt="#">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Imagenes Vinos/imagenes carrousel/pexels-mali-110822.jpg" class="d-block w-100" alt="#">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        
+
+        
+        
+    </header>
+    
 
     <main>
-        <h2>Nuestros Vinos</h2>
-        <section id="productos">
-            
+        <h2 class="text-center mb-4">Nuestros Vinos</h2>
+<section id="productos" class="container my-5">
+    <div class="row">
+        <!-- Producto 1 -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4">
             <div class="producto">
-                <img src="/Proyecto_Integrador/Image/los intocables.jpeg" alt="Vino Tinto">
+                <img src="/Proyecto_Integrador/Image/los intocables.jpeg" alt="Vino Tinto" class="img-fluid">
                 <h3>Los Intocables</h3>
                 <p>Bourbon Barrel Malbec</p>
                 <p>Precio: $10000</p>
-                <button onclick="agregarAlCarrito('Los Intocables', 10000)">Agregar al Carrito</button>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Los Intocables', 10000)">Agregar al Carrito</button>
             </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4">
             <div class="producto">
-                <img src="/Proyecto_Integrador/Image/Dulce dilema.jpeg" alt="Vino Blanco">
+                <img src="/Proyecto_Integrador/Image/Dulce dilema.jpeg" alt="Vino Blanco" class="img-fluid">
                 <h3>Dulce Dilema</h3>
                 <p>Blanco Dulce</p>
                 <p>Precio: $9000</p>
-                <button onclick="agregarAlCarrito('Dulce Dilema', 9000)">Agregar al Carrito</button>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Dulce Dilema', 9000)">Agregar al Carrito</button>
             </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4">
             <div class="producto">
-                <img src="/Proyecto_Integrador/Image/callia.jpeg" alt="Vino rose">
+                <img src="/Proyecto_Integrador/Image/callia.jpeg" alt="Vino Rose" class="img-fluid">
                 <h3>Callia</h3>
                 <p>Rose</p>
                 <p>Precio: 8000$</p>
-                <button onclick="agregarAlCarrito('Callia Rose', 8000)">Agregar al Carrito</button>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Callia Rose', 8000)">Agregar al Carrito</button>
             </div>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4">
             <div class="producto">
-                <img src="/Proyecto_Integrador/Image/Latitud33.jpeg" alt="Vino blend">
+                <img src="/Proyecto_Integrador/Image/Latitud33.jpeg" alt="Vino Blend" class="img-fluid">
                 <h3>Latitud 33</h3>
                 <p>Malbec Rose</p>
                 <p>Precio: 12000$</p>
-                <button onclick="agregarAlCarrito('Vino Blanco', 12000)">Agregar al Carrito</button>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Latitud 33', 12000)">Agregar al Carrito</button>
             </div>
+        </div>
+
+        <!-- Producto 1 -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4">
             <div class="producto">
-                <img src="/Proyecto_Integrador/Image/los intocables.jpeg" alt="Vino Tinto">
+                <img src="/Proyecto_Integrador/Image/los intocables.jpeg" alt="Vino Tinto" class="img-fluid">
                 <h3>Los Intocables</h3>
                 <p>Bourbon Barrel Malbec</p>
                 <p>Precio: $10000</p>
-                <button onclick="agregarAlCarrito('Los Intocables', 10000)">Agregar al Carrito</button>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Los Intocables', 10000)">Agregar al Carrito</button>
             </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4">
             <div class="producto">
-                <img src="/Proyecto_Integrador/Image/Dulce dilema.jpeg" alt="Vino Blanco">
+                <img src="/Proyecto_Integrador/Image/Dulce dilema.jpeg" alt="Vino Blanco" class="img-fluid">
                 <h3>Dulce Dilema</h3>
                 <p>Blanco Dulce</p>
                 <p>Precio: $9000</p>
-                <button onclick=" agregarAlCarrito('Dulce Dilema', 9000)">Agregar al Carrito</button>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Dulce Dilema', 9000)">Agregar al Carrito</button>
             </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4">
             <div class="producto">
-                <img src="/Proyecto_Integrador/Image/callia.jpeg" alt="Vino rose">
+                <img src="/Proyecto_Integrador/Image/callia.jpeg" alt="Vino Rose" class="img-fluid">
                 <h3>Callia</h3>
                 <p>Rose</p>
                 <p>Precio: 8000$</p>
-                <button onclick="agregarAlCarrito('Callia Rose', 8000)">Agregar al Carrito</button>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Callia Rose', 8000)">Agregar al Carrito</button>
             </div>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4">
             <div class="producto">
-                <img src="/Proyecto_Integrador/Image/Latitud33.jpeg" alt="Vino blend">
+                <img src="/Proyecto_Integrador/Image/Latitud33.jpeg" alt="Vino Blend" class="img-fluid">
                 <h3>Latitud 33</h3>
                 <p>Malbec Rose</p>
                 <p>Precio: 12000$</p>
-                <button onclick="agregarAlCarrito('Vino Blanco', 12000)">Agregar al Carrito</button>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Latitud 33', 12000)">Agregar al Carrito</button>
             </div>
-            <!-- Agrega más productos según sea necesario -->
+        </div>
+                
+                <!-- Más productos (puedes agregar más bloques según sea necesario) -->
             
+
+           
+            </div>
+        </section>
+        
+
+        <!-- Más productos (puedes agregar más bloques según sea necesario) -->
+    
+
+
         </section>
         <section id="contacto">
             <div class="form-container">
                 <h2>Contacto</h2>
                 <form>
-                    <label for="nombre-contacto">Nombre:</label>
-                    <input type="text" id="nombre-contacto" name="nombre" required>
-        
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required placeholder="ejemplo@dominio.com">
-        
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" name="mensaje" required maxlength="1000"></textarea>
-        
-                    <button type="submit">Enviar</button>
+                    <div class="form-group">
+                        <label for="nombre-contacto">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre-contacto" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required placeholder="ejemplo@dominio.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" required maxlength="1000"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Enviar</button>
                 </form>
             </div>
         </section>
     </main>
     
 
-    <footer>
+    <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2024 Tienda de Vinos. Todos los derechos reservados.</p>
-        <p class="link-readme"><a href="README.md" target="_blank">Readme</a></p>
+        <p><a href="README.md" target="_blank" class="text-white">Readme</a></p>
     </footer>
 
+        <!-- jQuery, Popper.js, y Bootstrap JS -->
 
-
-    <!-- <script>
-        // Cargar productos desde JSON
-        fetch('productos.json')
-            .then(response => response.json())
-            .then(data => {
-                const listaProductos = document.getElementById('lista-productos');
-                data.forEach(producto => {
-                    const productoDiv = document.createElement('div');
-                    productoDiv.className = 'producto';
-                    productoDiv.innerHTML = `
-                        <img src="${producto.imagen}" alt="${producto.nombre}">
-                        <h3>${producto.nombre}</h3>
-                        <p>${producto.descripcion}</p>
-                        <p>Precio: $${producto.precio}</p>
-                        <button>Añadir al Carrito</button>
-                    `;
-                    listaProductos.appendChild(productoDiv);
-                });
-            })
-            .catch(error => console.error('Error al cargar los productos:', error));
-    
-        // Manejar el envío del formulario de carga de productos
-        document.getElementById('formulario-producto').addEventListener('submit', function(e) {
-            e.preventDefault(); // Evitar el envío del formulario
-    
-            const nombre = document.getElementById('nombre').value;
-            const descripcion = document.getElementById('descripcion').value;
-            const precio = document.getElementById('precio').value;
-            const imagen = document.getElementById('imagen').value;
-    
-            // Crear un nuevo producto
-            const nuevoProducto = {
-                nombre: nombre,
-                descripcion: descripcion,
-                precio: parseFloat(precio),
-                imagen: imagen
-            };
-    
-            // Aquí es donde deberías enviar el nuevo producto al backend
-            console.log('Nuevo producto:', nuevoProducto);
-    
-            // Opcional: agregar el producto al DOM sin recargar la página
-            const listaProductos = document.getElementById('lista-productos');
-            const productoDiv = document.createElement('div');
-            productoDiv.className = 'producto';
-            productoDiv.innerHTML = `
-                <img src="${nuevoProducto.imagen}" alt="${nuevoProducto.nombre}">
-                <h3>${nuevoProducto.nombre}</h3>
-                <p>${nuevoProducto.descripcion}</p>
-                <p>Precio: $${nuevoProducto.precio}</p>
-                <button>Añadir al Carrito</button>
-            `;
-            listaProductos.appendChild(productoDiv);
-    
-            // Limpiar el formulario
-            this.reset();
-        });
-    </script> -->
-    
-
-
-    <script src="main/carrito.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="main/carrito.js"></script>
 </body>
 </html>
