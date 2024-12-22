@@ -1,6 +1,6 @@
 let carrito = [];
 // Inicializamos el contador del carrito
-let cartCount = 0;
+let cartCount = parseInt(localStorage.getItem('cartCount')) || 0;
 
 
 //cargar productos en la pagina principal
@@ -13,6 +13,15 @@ fetch('./main/productos.html')
     .catch(error => {
             console.error('Error cargando los productos:', error);
         }); 
+
+
+ // Función para actualizar el contador en el navbar
+function actualizarContadorCarrito() {
+    const cartCountSpan = document.getElementById('cart-count');
+    if (cartCountSpan) {
+        cartCountSpan.textContent = cartCount; // Mostrar el contador en el navbar
+    }
+}
 
 // Función para agregar un producto al carrito
 function agregarAlCarrito(nombre, precio) {
@@ -50,6 +59,7 @@ function agregarAlCarrito(nombre, precio) {
 function actualizarCarrito() {
     const carritoItems = document.getElementById('carrito-items');
     const totalElement = document.getElementById('total');
+    const aux = document.getAnimations('cart-count');
 
     if (!carritoItems || !totalElement) {
         console.error("Elementos del carrito no encontrados");
@@ -69,22 +79,27 @@ function actualizarCarrito() {
         `;
         carritoItems.appendChild(fila);
         total += item.precio * item.cantidad;
+        
     });
-
+    
     totalElement.textContent = total.toFixed(2);
+    aux = cartCount;
 }
 
 
 // Función para guardar el carrito en localStorage
 function guardarCarrito() {
     localStorage.setItem('carrito', JSON.stringify(carrito));
+    localStorage.setItem ('cart-count', cartCount);
 }
 
 // Función para cargar el carrito desde localStorage
 function cargarCarrito() {
     const carritoGuardado = JSON.parse(localStorage.getItem('carrito'));
+    const contador = JSON.parse(localStorage.getItem('cart-count'));
     if (carritoGuardado) {
         carrito = carritoGuardado;
+        cartCount = contador;
         actualizarCarrito();
     }
 }
@@ -93,6 +108,7 @@ function cargarCarrito() {
 function limpiarCarrito() {
     carrito = []; // Vaciar el carrito
     localStorage.removeItem('carrito'); // Limpiar el carrito de localStorage
+    localStorage.removeItem ('cart-count')
     actualizarCarrito(); // Actualizar la vista del carrito
 }
 
@@ -102,24 +118,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+// Al cargar la página, actualizar el contador en el navbar
+window.onload = function() {
+    actualizarContadorCarrito(); // Asegura que el contador se actualice en el navbar
+};
 
-// // Función para agregar un producto al carrito
-// document.getElementById("add-to-cart-btn").addEventListener("click", function() {
-//   // Incrementamos el contador del carrito
-//   cartCount++;
 
-//   // Actualizamos el contador en el carrito
-//   document.getElementById("cart-count").textContent = cartCount;
+// Función para expandir o colapsar la tarjeta
+function expandirTarjeta(elemento) {
+    // Evitar que el clic en el botón "Agregar al Carrito" expanda la tarjeta
+    if (event.target.tagName === 'BUTTON') {
+        return;
+    }
 
-//   // Mostramos el mensaje de notificación
-//   const notification = document.getElementById("notification");
-//   notification.style.display = "block";
-
-//   // Ocultamos la notificación después de 2 segundos
-//   setTimeout(function() {
-//     notification.style.display = "none";
-//   }, 2000);
-// });
-
-// Cargar el carrito al iniciar la página
-window.onload = cargarCarrito;
+    // Si la tarjeta ya está expandida, la contraemos
+    if (elemento.classList.contains('expandida')) {
+        elemento.classList.remove('expandida');
+    } else {
+        // Si no está expandida, la expandimos
+        elemento.classList.add('expandida');
+    }
+}
