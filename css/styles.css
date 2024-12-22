@@ -138,8 +138,52 @@ header h1 {
 /*fin seccion carrousel*/
 
 
+
 /*seccion carrito*/
 
+/* Agregar popup carrito*/
+/* Estilos para el popup debajo del carousel */
+.popup-notification {
+    position: fixed;
+    left: 20px; /* Alineado a la izquierda */
+    top: calc(100vh - 500px); /* Posición inicial debajo del carousel (ajustar si es necesario) */
+    background-color: #28a745; /* Color verde (puedes cambiarlo) */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none;
+    z-index: 9999;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(20px); /* Inicialmente hacia abajo */
+  }
+  
+  /* Cuando el popup se muestra */
+  .popup-notification.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0); /* Se mueve hacia su posición final */
+  }
+  
+  /* Responsividad para pantallas más pequeñas */
+  @media (max-width: 768px) {
+    .popup-notification {
+      left: 10px; /* Menor margen para móviles */
+      right: 10px; /* Para que ocupe más espacio en pantallas pequeñas */
+      top: calc(100vh - 120px); /* Ajustamos la posición vertical */
+      padding: 12px 15px; /* Ajuste en el padding */
+      font-size: 14px; /* Fuente más pequeña para móviles */
+    }
+  }
+  
+  .popup-content {
+    font-size: 16px;
+  }
+  
+  
+
+  
 nav ul {
     list-style: none; /* Sin viñetas */
     padding: 0;

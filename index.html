@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WINE-NOT</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/Proyecto_Integrador/css/styles.css">
-    <link rel="stylesheet" href="/Proyecto_Integrador/main/README.md">
-    <link rel="stylesheet" href="/Proyecto_Integrador/main/carrito.html">
-    <link rel="stylesheet" href="/Proyecto_Integrador/main/carrito.js">
-    <link rel="stylesheet" href="/Proyecto_Integrador/css/bootstrap.css">
-    <link rel="stylesheet" href="/Proyecto_Integrador/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="./main/productos.html">
+    <link rel="stylesheet" href="./README.md">
+    <link rel="stylesheet" href="./main/carrito.html">
+    <link rel="stylesheet" href="./js/carrito.js">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./js/bootstrap.bundle.min.js">
+    <title>WINE-NOT</title>
 </head>
 <body>
     <header>
@@ -24,17 +25,17 @@
     
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="/Proyecto_Integrador/index.html">WINE-NOT</a>
+            <a class="navbar-brand" href="./index.html">WINE-NOT</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/Proyecto_Integrador/index.html">Inicio</a>
+                        <a class="nav-link" href="./index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Proyecto_Integrador/main/carrito.html">Carrito</a>
+                        <a class="nav-link" href="./main/carrito.html">Carrito(<span id="cart-count">0</span>)</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contacto">Contacto</a>
@@ -43,9 +44,6 @@
             </div>
         </nav>
     </header>
-    
-    
-
         <!-- Carrusel de imágenes -->
         <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -72,119 +70,25 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
-        </div>
-        
-
-        
-        
+        </div>  
+    
     </header>
     
 
     <main>
         <h2 class="text-center mb-4">Nuestros Vinos</h2>
-<section id="productos" class="container my-5">
-    <div class="row">
-        <!-- Producto 1 -->
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-            <div class="producto">
-                <img src="/Proyecto_Integrador/Image/los intocables.jpeg" alt="Vino Tinto" class="img-fluid">
-                <h3>Los Intocables</h3>
-                <p>Bourbon Barrel Malbec</p>
-                <p>Precio: $10000</p>
-                <button class="btn btn-primary" onclick="agregarAlCarrito('Los Intocables', 10000)">Agregar al Carrito</button>
+        <!-- Notificación de producto agregado en un popup lateral -->
+        <div id="popup-notification" class="popup-notification">
+            <div class="popup-content">
+                <p>¡Producto agregado al carrito!</p>
             </div>
         </div>
-
-        <!-- Producto 2 -->
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-            <div class="producto">
-                <img src="/Proyecto_Integrador/Image/Dulce dilema.jpeg" alt="Vino Blanco" class="img-fluid">
-                <h3>Dulce Dilema</h3>
-                <p>Blanco Dulce</p>
-                <p>Precio: $9000</p>
-                <button class="btn btn-primary" onclick="agregarAlCarrito('Dulce Dilema', 9000)">Agregar al Carrito</button>
-            </div>
-        </div>
-
-        <!-- Producto 3 -->
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-            <div class="producto">
-                <img src="/Proyecto_Integrador/Image/callia.jpeg" alt="Vino Rose" class="img-fluid">
-                <h3>Callia</h3>
-                <p>Rose</p>
-                <p>Precio: 8000$</p>
-                <button class="btn btn-primary" onclick="agregarAlCarrito('Callia Rose', 8000)">Agregar al Carrito</button>
-            </div>
-        </div>
-
-        <!-- Producto 4 -->
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-            <div class="producto">
-                <img src="/Proyecto_Integrador/Image/Latitud33.jpeg" alt="Vino Blend" class="img-fluid">
-                <h3>Latitud 33</h3>
-                <p>Malbec Rose</p>
-                <p>Precio: 12000$</p>
-                <button class="btn btn-primary" onclick="agregarAlCarrito('Latitud 33', 12000)">Agregar al Carrito</button>
-            </div>
-        </div>
-
-        <!-- Producto 1 -->
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-            <div class="producto">
-                <img src="/Proyecto_Integrador/Image/los intocables.jpeg" alt="Vino Tinto" class="img-fluid">
-                <h3>Los Intocables</h3>
-                <p>Bourbon Barrel Malbec</p>
-                <p>Precio: $10000</p>
-                <button class="btn btn-primary" onclick="agregarAlCarrito('Los Intocables', 10000)">Agregar al Carrito</button>
-            </div>
-        </div>
-
-        <!-- Producto 2 -->
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-            <div class="producto">
-                <img src="/Proyecto_Integrador/Image/Dulce dilema.jpeg" alt="Vino Blanco" class="img-fluid">
-                <h3>Dulce Dilema</h3>
-                <p>Blanco Dulce</p>
-                <p>Precio: $9000</p>
-                <button class="btn btn-primary" onclick="agregarAlCarrito('Dulce Dilema', 9000)">Agregar al Carrito</button>
-            </div>
-        </div>
-
-        <!-- Producto 3 -->
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-            <div class="producto">
-                <img src="/Proyecto_Integrador/Image/callia.jpeg" alt="Vino Rose" class="img-fluid">
-                <h3>Callia</h3>
-                <p>Rose</p>
-                <p>Precio: 8000$</p>
-                <button class="btn btn-primary" onclick="agregarAlCarrito('Callia Rose', 8000)">Agregar al Carrito</button>
-            </div>
-        </div>
-
-        <!-- Producto 4 -->
-        <div class="col-12 col-sm-6 col-md-3 mb-4">
-            <div class="producto">
-                <img src="/Proyecto_Integrador/Image/Latitud33.jpeg" alt="Vino Blend" class="img-fluid">
-                <h3>Latitud 33</h3>
-                <p>Malbec Rose</p>
-                <p>Precio: 12000$</p>
-                <button class="btn btn-primary" onclick="agregarAlCarrito('Latitud 33', 12000)">Agregar al Carrito</button>
-            </div>
-        </div>
-                
-                <!-- Más productos (puedes agregar más bloques según sea necesario) -->
-            
-
-           
-            </div>
+                            <!-- seccion Productos -->
+        <!-- Aquí cargamos los productos -->
+        <section id="productos">
+            <div id="productos-container"></div>
         </section>
-        
-
-        <!-- Más productos (puedes agregar más bloques según sea necesario) -->
-    
-
-
-        </section>
+                            <!-- seccion contacto -->
         <section id="contacto">
             <div class="form-container">
                 <h2>Contacto</h2>
@@ -218,6 +122,6 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="main/carrito.js"></script>
+        <script src="./js/carrito.js"></script>
 </body>
 </html>
