@@ -16,10 +16,11 @@ fetch('./main/productos.html')
 
 
  // Función para actualizar el contador en el navbar
-function actualizarContadorCarrito() {
+ function actualizarContadorCarrito() {
+    cartCount = carrito.reduce((total, item) => total + item.cantidad, 0);  // Recalcular el total de productos en el carrito
     const cartCountSpan = document.getElementById('cart-count');
     if (cartCountSpan) {
-        cartCountSpan.textContent = cartCount; // Mostrar el contador en el navbar
+        cartCountSpan.textContent = cartCount; // Mostrar el contador actualizado
     }
 }
 
@@ -53,13 +54,13 @@ function agregarAlCarrito(nombre, precio) {
 
     actualizarCarrito();
     guardarCarrito(); // Guardar en localStorage
+    actualizarContadorCarrito(); // Actualizar el contador
 }
 
 // Función para actualizar el carrito en la interfaz
 function actualizarCarrito() {
     const carritoItems = document.getElementById('carrito-items');
     const totalElement = document.getElementById('total');
-    const aux = document.getAnimations('cart-count');
 
     if (!carritoItems || !totalElement) {
         console.error("Elementos del carrito no encontrados");
@@ -69,21 +70,56 @@ function actualizarCarrito() {
     carritoItems.innerHTML = ''; // Limpiar la tabla antes de actualizar
     let total = 0;
 
-    carrito.forEach((item) => {
+    carrito.forEach((item, index) => {
         const fila = document.createElement('tr');
         fila.innerHTML = `
             <td>${item.nombre}</td>
             <td>${item.precio}$</td>
             <td>${item.cantidad}</td>
             <td>${(item.precio * item.cantidad).toFixed(2)}$</td>
+            <td>
+                <button onclick="incrementarCantidad(${index})">+</button>
+                <button onclick="decrementarCantidad(${index})">-</button>
+                <button onclick="eliminarProducto(${index})">Eliminar</button>
+            </td>
         `;
         carritoItems.appendChild(fila);
         total += item.precio * item.cantidad;
-        
     });
-    
+
     totalElement.textContent = total.toFixed(2);
-    aux = cartCount;
+    actualizarContadorCarrito(); // Actualizar el contador en el navbar
+}
+
+// Función para incrementar la cantidad de un producto en el carrito
+function incrementarCantidad(index) {
+    carrito[index].cantidad++; // Incrementa la cantidad del producto
+    actualizarCarrito(); // Actualiza el carrito
+    guardarCarrito(); // Guarda el carrito actualizado en el localStorage
+    actualizarContadorCarrito(); // Actualizar el contador
+
+}
+
+// Función para decrementar la cantidad de un producto en el carrito
+function decrementarCantidad(index) {
+    if (carrito[index].cantidad > 1) {
+        carrito[index].cantidad--; // Decrementa la cantidad si es mayor que 1
+    } else {
+        eliminarProducto(index); // Si la cantidad es 1, eliminamos el producto
+    }
+    actualizarCarrito(); // Actualiza el carrito
+    guardarCarrito(); // Guarda el carrito actualizado en el localStorage
+    actualizarContadorCarrito(); // Actualizar el contador
+
+}
+
+// Función para eliminar un producto del carrito
+function eliminarProducto(index) {
+    carrito.splice(index, 1); // Elimina el producto del carrito
+    actualizarCarrito(); // Actualiza el carrito
+    guardarCarrito(); // Guarda el carrito actualizado en el localStorage
+    localStorage.removeItem('cart-count'); // Limpiar el contador del carrito
+
 }
 
 
@@ -101,6 +137,8 @@ function cargarCarrito() {
         carrito = carritoGuardado;
         cartCount = contador;
         actualizarCarrito();
+        actualizarContadorCarrito(); // Actualizar el contador
+
     }
 }
 
@@ -108,8 +146,10 @@ function cargarCarrito() {
 function limpiarCarrito() {
     carrito = []; // Vaciar el carrito
     localStorage.removeItem('carrito'); // Limpiar el carrito de localStorage
-    localStorage.removeItem ('cart-count')
-    actualizarCarrito(); // Actualizar la vista del carrito
+    localStorage.removeItem('cart-count'); // Limpiar el contador del carrito
+    actualizarCarrito(); // Actualiza la vista del carrito
+    actualizarContadorCarrito(); // Actualizar el contador
+
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -138,4 +178,5 @@ function expandirTarjeta(elemento) {
         // Si no está expandida, la expandimos
         elemento.classList.add('expandida');
     }
+
 }

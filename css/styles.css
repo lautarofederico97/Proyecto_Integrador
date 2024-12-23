@@ -181,9 +181,7 @@ header h1 {
     font-size: 16px;
   }
   
-  
 
-  
 nav ul {
     list-style: none; /* Sin viñetas */
     padding: 0;
@@ -213,12 +211,15 @@ main {
 
 th, td {
     padding: 10px; /* Espaciado interno de celdas */
-    border: 1px solid #ddd; /* Bordes de celdas */
-    text-align: left; /* Alinear texto a la izquierda */
+    border: 1px solid #ddd;
+    text-align: left; /* Alineación de texto a la izquierda */
 }
 
 th {
     background-color: #f2f2f2; /* Fondo para el encabezado de la tabla */
+}
+td {
+    text-align: center; /* Centrado de contenido en celdas */
 }
 
 table {
