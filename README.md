@@ -10,8 +10,9 @@ El proyecto contiene los siguientes archivos:
 
 - **`index.html`**: Este es el archivo principal que contiene la estructura de la página web. Incluye secciones para productos, un formulario de contacto y un pie de página.
 - **`carrito.html`**: Este archivo contiene la estructura del carrito de compras. Permite a los usuarios ver los productos añadidos, la cantidad, el total y la opción de limpiar el carrito o finalizar la compra.
+- **`productos.html`**: se separo la seccion de carga de productos para una mayor facilidad a la hroa de modfiicar los productos y de esta manera no se debe modificar el archivo principal.
 - **`styles.css`**: Este archivo contiene todos los estilos CSS que dan formato y diseño a la página, mejorando la experiencia visual del usuario.
-
+- **`carrito.js`**: Este archivo contiene toda la logica e interaccion de la pagina.
 ### Contenido del archivo `index.html`
 
 - **Header**: 
